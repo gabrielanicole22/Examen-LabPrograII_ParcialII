@@ -97,6 +97,7 @@ public class PSNUsers {
         if (pos != -1) {
             raf.seek(pos + 4);
             if (raf.readBoolean()) {
+                //prints de prueba
                 System.out.println("Nombre de usuario: " + username);
                 //Falta terminar
                 System.out.println("Puntos por trofeos: ");

@@ -6,7 +6,10 @@ package examen.labprograii_2parcial;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import java.io.IOException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -48,6 +51,7 @@ public class AddTrophieTo extends javax.swing.JFrame {
         txtTrophyName = new javax.swing.JTextField();
         txtTrophyType = new javax.swing.JTextField();
         btnAdd = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +76,8 @@ public class AddTrophieTo extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setText("Agregar Trofeo");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,20 +92,25 @@ public class AddTrophieTo extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
                         .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTrophyGame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTrophyName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTrophyType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTrophyName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                            .addComponent(txtTrophyGame)
+                            .addComponent(txtUsername)
+                            .addComponent(txtTrophyType)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(150, 150, 150)
-                        .addComponent(btnAdd)))
-                .addContainerGap(158, Short.MAX_VALUE))
+                        .addComponent(btnAdd))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(jLabel5)))
+                .addGap(49, 49, 49))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(86, 86, 86)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel5)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -125,8 +136,12 @@ public class AddTrophieTo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseClicked
-        // TODO add your handling code here:
-        //psnusers.addTrophyTo(txtUsername.getText(), txtTrophyGame.getText(), txtTrophyName.getText(), txtTrophyType.getText());
+        try {
+            // TODO add your handling code here:
+            psnusers.addTrophyTo(txtUsername.getText(), txtTrophyGame.getText(), txtTrophyName.getText(), Trophy.BRONCE);
+        } catch (IOException ex) {
+            Logger.getLogger(AddTrophieTo.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnAddMouseClicked
 
     private void btnAddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseEntered
@@ -147,6 +162,7 @@ public class AddTrophieTo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField txtTrophyGame;
     private javax.swing.JTextField txtTrophyName;
     private javax.swing.JTextField txtTrophyType;

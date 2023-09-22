@@ -16,9 +16,6 @@ import java.util.logging.Logger;
  */
 public class PlayerInfo extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PlayerInfo
-     */
     PSNUsers psnusers;
     Color SELECT_COLOR = new Color(83, 152, 254);
     private Color colorAnterior;
@@ -38,6 +35,7 @@ public class PlayerInfo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         btnMostrar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,6 +65,8 @@ public class PlayerInfo extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Player Information");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,11 +79,17 @@ public class PlayerInfo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnMostrar)
                 .addGap(82, 82, 82))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(215, 215, 215)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(94, 94, 94)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel2)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,6 +132,7 @@ public class PlayerInfo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMostrar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
