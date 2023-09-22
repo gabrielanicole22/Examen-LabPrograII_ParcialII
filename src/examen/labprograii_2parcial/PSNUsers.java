@@ -71,25 +71,15 @@ public class PSNUsers {
             raf.seek(pos + 4);
             if (raf.readBoolean()) {
                 raf.seek(raf.length());
-                raf.writeUTF(username);
-                raf.writeUTF(type.name());
-                raf.writeUTF(trophyGame);
+                raf.writeUTF(username);                
+                raf.writeUTF(trophyGame);                
                 raf.writeUTF(trophyName);
-                
-                /*Calendar calendar = Calendar.getInstance();
-                int año = calendar.get(Calendar.YEAR);
-                int mes = calendar.get(Calendar.MONTH) + 1;
-                int dia = calendar.get(Calendar.DAY_OF_MONTH);
-                String fecha = dia + "/" + mes + "/" + año;*/
-                
+                raf.writeUTF(type.name());
                 long fechaCreacion = new Date().getTime();
                 raf.writeLong(fechaCreacion);
-                JOptionPane.showMessageDialog(null, "Trofeo agregado exitosamente.");
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Ha ocurrido un error.");
             }
         }
+        JOptionPane.showMessageDialog(null, "Trofeo agregado exitosamente.");
     }
 
     public void playerInfo(String username) throws IOException {

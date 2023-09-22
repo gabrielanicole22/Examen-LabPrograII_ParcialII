@@ -23,7 +23,8 @@ public class PlayerInfo extends javax.swing.JFrame {
     public PlayerInfo(PSNUsers psnusers) {
         initComponents();
         this.psnusers = psnusers;
-
+        Color backgroundColor = new Color(254, 251, 243);
+        getContentPane().setBackground(backgroundColor);    
         colorAnterior = btnMostrar.getForeground();
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }

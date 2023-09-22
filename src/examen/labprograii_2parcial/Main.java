@@ -13,9 +13,6 @@ import java.awt.Cursor;
  */
 public class Main extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Main
-     */
     PSNUsers psnusers;
     Color SELECT_COLOR = new Color(83, 152, 254);
     private Color colorAnterior;
@@ -24,6 +21,8 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         this.psnusers = new PSNUsers();
         colorAnterior = btnAddUser.getForeground();
+        Color backgroundColor = new Color(254, 251, 243);
+        getContentPane().setBackground(backgroundColor);        
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
@@ -36,9 +35,11 @@ public class Main extends javax.swing.JFrame {
         btnAddTrophieTo = new javax.swing.JLabel();
         btnSalir = new javax.swing.JLabel();
         btnPlayerInfo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        btnAddUser.setFont(new java.awt.Font("Source Code Pro Light", 1, 18)); // NOI18N
         btnAddUser.setText("Add user");
         btnAddUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -52,6 +53,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        btnDesactivateUser.setFont(new java.awt.Font("Source Code Pro Light", 1, 18)); // NOI18N
         btnDesactivateUser.setText("Desactivate User");
         btnDesactivateUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -65,6 +67,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        btnAddTrophieTo.setFont(new java.awt.Font("Source Code Pro Light", 1, 18)); // NOI18N
         btnAddTrophieTo.setText("AddTrophieTo");
         btnAddTrophieTo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -78,6 +81,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        btnSalir.setFont(new java.awt.Font("Source Code Pro Light", 1, 18)); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -91,6 +95,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        btnPlayerInfo.setFont(new java.awt.Font("Source Code Pro Light", 1, 18)); // NOI18N
         btnPlayerInfo.setText("Player Info");
         btnPlayerInfo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -104,14 +109,13 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Quiska", 0, 36)); // NOI18N
+        jLabel1.setText("Examen Laboratorio de Progra II");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalir)
-                .addGap(57, 57, 57))
             .addGroup(layout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -119,12 +123,20 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(btnAddTrophieTo)
                     .addComponent(btnDesactivateUser)
                     .addComponent(btnAddUser))
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(68, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(btnSalir))
+                .addGap(57, 57, 57))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(122, 122, 122)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addComponent(btnAddUser)
                 .addGap(26, 26, 26)
                 .addComponent(btnDesactivateUser)
@@ -132,7 +144,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(btnAddTrophieTo)
                 .addGap(29, 29, 29)
                 .addComponent(btnPlayerInfo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addComponent(btnSalir)
                 .addGap(29, 29, 29))
         );
@@ -267,5 +279,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel btnDesactivateUser;
     private javax.swing.JLabel btnPlayerInfo;
     private javax.swing.JLabel btnSalir;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
