@@ -89,7 +89,6 @@ public class PSNUsers {
             if (raf.readBoolean()) {
                 //prints de prueba
                 System.out.println("Nombre de usuario: " + username);
-                //Falta terminar
                 System.out.println("Puntos por trofeos: ");
                 System.out.println("Contador de trofeos: ");
                 System.out.println("Trofeos: ");
