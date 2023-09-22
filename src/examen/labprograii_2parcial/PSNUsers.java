@@ -6,6 +6,7 @@ package examen.labprograii_2parcial;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -49,18 +50,22 @@ public class PSNUsers {
         raf.writeUTF(username);
         raf.writeBoolean(true);
         users.add(username, pos);
+        JOptionPane.showMessageDialog(null, "Usuario creado exitosamente.");
     }
 
-    public void deactivateUser(String username) throws IOException {
+    public void desactivateUser(String username) throws IOException {
         long pos = users.search(username);
         if (pos != -1) {
             raf.seek(pos + 4);
             raf.writeBoolean(false);
             users.remove(username);
+            JOptionPane.showMessageDialog(null, "Usuario desactivado correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error.");
         }
     }
 
-    public void addTrophyTo(String username, String trophyGame, String trophyName, Trophy type, String date) throws IOException {
+    public void addTrophyTo(String username, String trophyGame, String trophyName, Trophy type) throws IOException {
         long pos = users.search(username);
         if (pos != -1) {
             raf.seek(pos + 4);
@@ -70,7 +75,19 @@ public class PSNUsers {
                 raf.writeUTF(type.name());
                 raf.writeUTF(trophyGame);
                 raf.writeUTF(trophyName);
-                raf.writeUTF(date);
+                
+                /*Calendar calendar = Calendar.getInstance();
+                int año = calendar.get(Calendar.YEAR);
+                int mes = calendar.get(Calendar.MONTH) + 1;
+                int dia = calendar.get(Calendar.DAY_OF_MONTH);
+                String fecha = dia + "/" + mes + "/" + año;*/
+                
+                long fechaCreacion = new Date().getTime();
+                raf.writeLong(fechaCreacion);
+                JOptionPane.showMessageDialog(null, "Trofeo agregado exitosamente.");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Ha ocurrido un error.");
             }
         }
     }
