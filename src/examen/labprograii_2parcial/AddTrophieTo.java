@@ -27,7 +27,7 @@ public class AddTrophieTo extends javax.swing.JFrame {
         this.psnusers = psnusers;
         colorAnterior = btnAdd.getForeground();
         Color backgroundColor = new Color(254, 251, 243);
-        getContentPane().setBackground(backgroundColor);    
+        getContentPane().setBackground(backgroundColor);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 

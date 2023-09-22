@@ -17,15 +17,16 @@ import java.util.logging.Logger;
 public class AddUser extends javax.swing.JFrame {
 
     PSNUsers psnusers;
-        Color SELECT_COLOR = new Color(83, 152, 254);
+    Color SELECT_COLOR = new Color(83, 152, 254);
     private Color colorAnterior;
+
     public AddUser(PSNUsers psnusers) {
         initComponents();
-        this.psnusers=psnusers;
-                colorAnterior = btnAddUser.getForeground();        
+        this.psnusers = psnusers;
+        colorAnterior = btnAddUser.getForeground();
         Color backgroundColor = new Color(254, 251, 243);
-        getContentPane().setBackground(backgroundColor);    
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);        
+        getContentPane().setBackground(backgroundColor);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     @SuppressWarnings("unchecked")
@@ -102,7 +103,7 @@ public class AddUser extends javax.swing.JFrame {
     private void btnAddUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddUserMouseEntered
         // TODO add your handling code here:
         btnAddUser.setForeground(SELECT_COLOR);
-        setCursor(Cursor.HAND_CURSOR);        
+        setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_btnAddUserMouseEntered
 
     private void btnAddUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddUserMouseExited

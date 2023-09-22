@@ -24,11 +24,11 @@ public class PlayerInfo extends javax.swing.JFrame {
         initComponents();
         this.psnusers = psnusers;
         Color backgroundColor = new Color(254, 251, 243);
-        getContentPane().setBackground(backgroundColor);    
+        getContentPane().setBackground(backgroundColor);
         colorAnterior = btnMostrar.getForeground();
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

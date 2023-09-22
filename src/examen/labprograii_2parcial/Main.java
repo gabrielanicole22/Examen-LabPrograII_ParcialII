@@ -22,7 +22,7 @@ public class Main extends javax.swing.JFrame {
         this.psnusers = new PSNUsers();
         colorAnterior = btnAddUser.getForeground();
         Color backgroundColor = new Color(254, 251, 243);
-        getContentPane().setBackground(backgroundColor);        
+        getContentPane().setBackground(backgroundColor);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
