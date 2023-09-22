@@ -18,7 +18,6 @@ import java.util.logging.Logger;
 public class AddTrophieTo extends javax.swing.JFrame {
 
     PSNUsers psnusers;
-    Date date;
     Color SELECT_COLOR = new Color(83, 152, 254);
     private Color colorAnterior;
 

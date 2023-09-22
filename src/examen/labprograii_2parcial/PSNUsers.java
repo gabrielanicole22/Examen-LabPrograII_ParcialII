@@ -6,7 +6,6 @@ package examen.labprograii_2parcial;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -72,15 +71,15 @@ public class PSNUsers {
             raf.seek(pos + 4);
             if (raf.readBoolean()) {
                 raf.seek(raf.length());
-                raf.writeUTF(username);                
-                raf.writeUTF(trophyGame);                
+                raf.writeUTF(username);
+                raf.writeUTF(trophyGame);
                 raf.writeUTF(trophyName);
                 raf.writeUTF(type.name());
                 long fechaCreacion = new Date().getTime();
                 raf.writeLong(fechaCreacion);
             }
         }
-        JOptionPane.showMessageDialog(null, "Trofeo agregado exitosamente.");
+        //JOptionPane.showMessageDialog(null, "Trofeo agregado exitosamente.");
     }
 
     public void playerInfo(String username) throws IOException {
@@ -106,42 +105,4 @@ public class PSNUsers {
             }
         }
     }
-     
-    /*
-    public void addTrophyTo(String username, String game, String nombretrofeo, String Description) throws IOException {
-        raf.seek(raf.length());
-
-        Calendar calendar = Calendar.getInstance();
-        int año = calendar.get(Calendar.YEAR);
-        int mes = calendar.get(Calendar.MONTH) + 1;
-        int dia = calendar.get(Calendar.DAY_OF_MONTH);
-        String fecha = dia + "/" + mes + "/" + año;
-
-        String info = "Juego: " + game + " Tipo: " + nombretrofeo + " Fecha:" + fecha + " Descripcion: " + Description;
-
-        if (users.search(username) != -1) {
-            raf.writeUTF(username);
-            raf.writeUTF(info);
-        } else {
-            JOptionPane.showMessageDialog(null, "Error: user no encontrado");
-        }
-    }
-
-    public String playerInfoo(String username) throws IOException {
-        String hola = "";
-        if (users.search(username) != -1) {
-            raf.seek(0);
-            while (raf.getFilePointer() < raf.length()) {
-                String user = raf.readUTF();
-                String info = raf.readUTF();
-                if (user.equals(username)) {
-                    hola += info + "\n";
-                }
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Error: no se han encontrado trofeos registrados con este user");
-        }
-        return hola;
-    }
-*/
 }

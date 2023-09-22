@@ -42,7 +42,7 @@ public class HashTable {
             current = current.next;
         }
     }
-    
+
     public long search(String username) {
         Entry current = head;
         while (current != null) {

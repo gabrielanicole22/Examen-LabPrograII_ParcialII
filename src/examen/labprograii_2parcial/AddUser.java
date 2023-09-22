@@ -15,7 +15,6 @@ import java.util.logging.Logger;
  * @author Gabriela Mejia
  */
 public class AddUser extends javax.swing.JFrame {
-
     PSNUsers psnusers;
     Color SELECT_COLOR = new Color(83, 152, 254);
     private Color colorAnterior;
